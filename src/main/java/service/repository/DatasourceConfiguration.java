@@ -18,21 +18,14 @@ public class DatasourceConfiguration {
     @Bean
     @LiquibaseDataSource
     public DataSource liquibaseDataSource() {
-
-        System.out.printf(
-                "host: %s\nport: %s\ndatabase: %s\nusername: %s\npassword: %s\n",
-                properties.host, properties.port, properties.database, properties.username, properties.password
-        );
         final HikariConfig hikariConfig = new HikariConfig();
 
-        hikariConfig.setDriverClassName(org.postgresql.Driver.class.getName());
-        hikariConfig.setJdbcUrl("jdbc:postgresql://localhost:5432/postgresql");
-        hikariConfig.setUsername("diasoft");
-        hikariConfig.setPassword("diasoft");
-
+        hikariConfig.setDriverClassName(properties.driverClassName);
+        hikariConfig.setJdbcUrl(properties.url);
+        hikariConfig.setUsername(properties.username);
+        hikariConfig.setPassword(properties.password);
         hikariConfig.setMaximumPoolSize(2);
         hikariConfig.setPoolName("ContactsLiquibasePool");
-
         return new HikariDataSource(hikariConfig);
     }
 

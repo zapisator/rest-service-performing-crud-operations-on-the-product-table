@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ConfigurationProperties(prefix = "postgres")
+@ConfigurationProperties(prefix = "spring.postgres")
 @Data
 public class PostgresProperties {
     String host;
@@ -14,4 +14,6 @@ public class PostgresProperties {
     String database;
     String username;
     String password;
+    String driverClassName;
+    String url;
 }

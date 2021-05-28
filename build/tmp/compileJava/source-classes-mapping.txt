@@ -2,11 +2,11 @@ service/controller/Controller.java
  service.controller.Controller
 service/repository/Repository.java
  service.repository.Repository
-service/App.java
- service.App
-service/domain/Product.java
- service.domain.Product
 service/repository/PostgresProperties.java
  service.repository.PostgresProperties
+service/domain/Product.java
+ service.domain.Product
+service/App.java
+ service.App
 service/repository/DatasourceConfiguration.java
  service.repository.DatasourceConfiguration
