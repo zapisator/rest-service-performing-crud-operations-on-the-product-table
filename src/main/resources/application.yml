@@ -1,3 +1,8 @@
+logging:
+  level:
+    root: DEBUG
+    liquibase: DEBUG
+
 spring:
   application:
     name: rest-service
@@ -5,6 +10,7 @@ spring:
     banner-mode: "off"
   liquibase:
     enabled: true
+    change-log: classpath:changelog/db.changelog-master.yaml
   datasource:
     url: jdbc:postgresql://${postgres.host}:${postgres.port}
     driver-class-name: ${spring.postgres.driver-class-name}
@@ -14,8 +20,12 @@ spring:
   jpa:
     database: ${spring.postgres.database}
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
-    hibernate:
-      ddl-auto: none
+#    hibernate:
+#      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
   postgres:
     host: localhost
     port: 5432
@@ -25,6 +35,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://${spring.postgres.host}:${spring.postgres.port}/${spring.postgres.database}
     pool:
+      enabled: true
       name: ProductLiquibasePool
       initial-size: 5
       max-size: 2

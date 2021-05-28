@@ -1,21 +1,6 @@
 version: '3'
 services:
 
-  #  gateway:
-  #    build: ./gateway
-  #    ports:
-  #      - "8080:8080"
-  #    depends_on:
-  #      - postgres
-  #    environment:
-  #      POSTGRES_HOST: postgres
-  #      POSTGRES_PORT: 5432
-  #      POSTGRES_DATABASE: rest-service
-  #      POSTGRES_USERNAME: diasoft
-  #      POSTGRES_PASSWORD: diasoft
-  #      OPTIONS: "-XX:+UseG1GC -XX:NewRatio=1" # -XX:MinRAMPercentage=60 -XX:MaxRAMPercentage=80
-  #      POSTGRES_LIQUIBASE_ENABLED: "true"
-
   postgres:
     image: postgres:latest
     environment:
