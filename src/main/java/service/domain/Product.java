@@ -14,6 +14,7 @@ public class Product {
     @Id
     @GeneratedValue
     private Integer id;
+
     private String name;
     private Integer amount;
 

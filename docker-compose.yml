@@ -20,8 +20,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: postgresql
-      POSTGRES_USER: sa
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: diasoft
+      POSTGRES_PASSWORD: diasoft
     volumes:
       - postgres:/data/postgres
     ports:

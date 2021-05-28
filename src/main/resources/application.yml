@@ -1,20 +1,36 @@
 spring:
-#  liquibase:
-#    enabled: true
+
+  application:
+    name: rest-service
+
+  main:
+    banner-mode: "off"
+
+  liquibase:
+    enabled: true
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgresql
+    url: jdbc:postgresql://${postgres.host}:${postgres.port}
     driver-class-name: org.postgresql.Driver
-    username: sa
-    password: password
+    name: ${postgres.database}
+    username: ${postgres.username}
+    password: ${postgres.password}
 
   jpa:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
-#    hibernate:
-#      ddl-auto: none
+    hibernate:
+      ddl-auto: none
 
-  sql:
-    init:
-      schema-locations: ${DB_SCHEMA}
 
+  postgres:
+    host:
+    port: 5432
+    database: postgresql
+    username: diasoft
+    password: diasoft
+    pool:
+      initial-size: 5
+      max-idle-time: 10s
+    liquibase:
+      enabled: true
