@@ -4,7 +4,6 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import javax.sql.DataSource;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +23,8 @@ public class DatasourceConfiguration {
         hikariConfig.setJdbcUrl(properties.url);
         hikariConfig.setUsername(properties.username);
         hikariConfig.setPassword(properties.password);
-        hikariConfig.setMaximumPoolSize(2);
-        hikariConfig.setPoolName("ContactsLiquibasePool");
+        hikariConfig.setMaximumPoolSize(properties.pool.getInitialSize());
+        hikariConfig.setPoolName(properties.pool.getName());
         return new HikariDataSource(hikariConfig);
     }
 

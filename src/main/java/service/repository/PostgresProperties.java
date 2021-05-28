@@ -1,11 +1,11 @@
 package service.repository;
 
+import java.time.Duration;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 @ConfigurationProperties(prefix = "spring.postgres")
 @Data
 public class PostgresProperties {
@@ -16,4 +16,15 @@ public class PostgresProperties {
     String password;
     String driverClassName;
     String url;
+    Pool pool;
+
+    @Data
+    public static class Pool {
+
+        String name;
+        int initialSize;
+        int mapSize;
+        Duration maxIdleTime;
+
+    }
 }

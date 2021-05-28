@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: Galkin
+      author: zapisator
       runAlways: true
       preConditions:
         onFail: MARK_RAN

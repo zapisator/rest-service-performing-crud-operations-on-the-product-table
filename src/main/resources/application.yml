@@ -1,28 +1,21 @@
 spring:
-
   application:
     name: rest-service
-
   main:
     banner-mode: "off"
-
   liquibase:
     enabled: true
-
   datasource:
     url: jdbc:postgresql://${postgres.host}:${postgres.port}
     driver-class-name: ${spring.postgres.driver-class-name}
     name: ${postgres.database}
     username: ${postgres.username}
     password: ${postgres.password}
-
   jpa:
-    database: postgresql
+    database: ${spring.postgres.database}
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
     hibernate:
       ddl-auto: none
-
-
   postgres:
     host: localhost
     port: 5432
@@ -32,7 +25,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://${spring.postgres.host}:${spring.postgres.port}/${spring.postgres.database}
     pool:
+      name: ProductLiquibasePool
       initial-size: 5
+      max-size: 2
       max-idle-time: 10s
-    liquibase:
-      enabled: true
