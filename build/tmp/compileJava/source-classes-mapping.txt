@@ -1,0 +1,12 @@
+service/controller/Controller.java
+ service.controller.Controller
+service/repository/Repository.java
+ service.repository.Repository
+service/repository/DatasourceConfiguration.java
+ service.repository.DatasourceConfiguration
+service/repository/H2Properties.java
+ service.repository.H2Properties
+service/domain/Product.java
+ service.domain.Product
+service/App.java
+ service.App
