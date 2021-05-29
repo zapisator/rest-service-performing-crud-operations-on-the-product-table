@@ -20,11 +20,10 @@ public class PostgresProperties {
 
     @Data
     public static class Pool {
-
         String name;
         int initialSize;
         int mapSize;
         Duration maxIdleTime;
-
     }
+
 }
