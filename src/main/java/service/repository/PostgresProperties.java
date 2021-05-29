@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "spring.postgres")
+@ConfigurationProperties(prefix = "postgres")
 @Data
 public class PostgresProperties {
     String host;
