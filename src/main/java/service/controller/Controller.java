@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import service.domain.Product;
-import service.repository.Repository;
+import service.repository.ProductRepository;
 
 @RestController
 @RequestMapping("/product")
 @RequiredArgsConstructor
 public class Controller {
 
-    private final Repository repository;
+    private final ProductRepository repository;
 
     @GetMapping
     public List<Product> getProducts() {
-        return repository.findAll();
+        return (List<Product>) repository.findAll();
     }
 
     @GetMapping("/{id}")
