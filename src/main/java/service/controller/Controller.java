@@ -33,6 +33,11 @@ public class Controller {
         return repository.findById(id).orElseThrow(RuntimeException::new);
     }
 
+    @GetMapping("/sumAmountByName/{name}")
+    public int sumAmountByName(@PathVariable String name) {
+        return repository.sumAmountByName(name);
+    }
+
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product)
             throws URISyntaxException {
