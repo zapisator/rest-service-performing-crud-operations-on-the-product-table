@@ -2,8 +2,9 @@
 Рест сервис, выполняющий CRUD операции над таблицей `product(id int, name varchar, amount int)` и один метод(`name`), который возвращает сумму полей `amount` по полю `name`.
 
 
-# Для запуска (в командной строке с установленным *Docker*):
-- `./gradlew build` (собирать программу `rest-service`)
+# Для запуска 
+### (в командной строке с установленным и запущенным *Docker*):
+- `./gradlew build` для `*nix` // `gradlew.bat` для `Windows` (собрать программу `rest-service`)
 - `docker-compose up`. (запустить два сервиса: `postgres` и `rest-service`)
 - через `Postman` или `curl` по адресу `http://localhost:8080/product`:
     - GET: 
