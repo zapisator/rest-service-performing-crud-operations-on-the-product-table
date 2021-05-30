@@ -2,9 +2,10 @@
 Рест сервис, выполняющий CRUD операции над таблицей `product(id int, name varchar, amount int)` и один метод(`name`), который возвращает сумму полей `amount` по полю `name`.
 
 
-# Для запуска:
-- На машине, с установленным Docker, в командной строке с `Bash`: `docker-compose up`. Это запустит два сервиса: `postgres` и `rest-service`.
-- В сервисе http запросов например `Postman` или через командную строку с помощью утилиты `curl` по адресу http://localhost:8080/product запросов доступны команды:
+# Для запуска (в командной строке с установленным *Docker*):
+- `./gradlew build` (собирать программу `rest-service`)
+- `docker-compose up`. (запустить два сервиса: `postgres` и `rest-service`)
+- через `Postman` или `curl` по адресу `http://localhost:8080/product`:
     - GET: 
       - `""`; все доступные продукты
       - `"/{id}"`; найти по `id`
@@ -18,4 +19,4 @@
     
 
 # Технологии
-Spring boot, Spring data JDBC, Gradle, Docker, Docker-compose, Postgres, Liquibase
+Spring boot, Spring data JDBC, Spring MVC, Gradle, Docker, Docker-compose, Postgres, Liquibase
