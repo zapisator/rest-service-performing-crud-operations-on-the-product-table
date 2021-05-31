@@ -3,8 +3,8 @@
 
 
 # Для запуска 
-### (в командной строке с установленным и запущенным *Docker*):
-- `./gradlew build` для `*nix` // `gradlew.bat build` для `Windows` (собрать программу `rest-service`)
+### (из папки проекта в командной строке с установленным и запущенным *Docker*):
+- `./gradlew build` для `*nix` // `gradlew build` для `Windows` (собрать программу `rest-service`)
 - `docker-compose up` (запустить два сервиса: `postgres` и `rest-service`)
 - через `Postman` или `curl` по адресу `http://localhost:8080/product`:
     - GET: 
